@@ -23,7 +23,7 @@ services:
       - '-c 2'
       - '-n 10'
       - 'http://performance-objectmapper:8080/angebote'
-  apache-bench:
+  apache-bench-full:
     image: jordi/ab
     depends_on:
       apache-bench-warmup:
