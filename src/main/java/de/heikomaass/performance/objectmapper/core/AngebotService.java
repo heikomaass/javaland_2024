@@ -6,7 +6,15 @@ import java.util.UUID;
 public class AngebotService {
 
     public List<Angebot> getAngebote() {
-        return List.of(randomAngebot(), randomAngebot(), randomAngebot(), randomAngebot());
+        return List.of(
+                randomAngebot(),
+                randomAngebot(),
+                randomAngebot(),
+                randomAngebot(),
+                randomAngebot(),
+                randomAngebot(),
+                randomAngebot()
+        );
     }
 
     private Angebot randomAngebot() {
