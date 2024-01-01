@@ -1,0 +1,22 @@
+ssl_session_cache   shared:SSL:10m;
+ssl_session_timeout 10m;
+
+server {
+    listen              8443 ssl;
+    keepalive_timeout   70;
+    server_name         www.example.com;
+    ssl_certificate     /etc/nginx/certs/nginx-selfsigned.crt;
+    ssl_certificate_key /etc/nginx/certs/nginx-selfsigned.key;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+    ssl_ciphers         HIGH:!aNULL:!MD5;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html index.htm;
+    }
+    error_page   500 502 503 504  /50x.html;
+    location = /50x.html {
+        root   /usr/share/nginx/html;
+    }
+}
+

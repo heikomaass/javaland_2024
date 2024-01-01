@@ -9,8 +9,10 @@ import org.mapstruct.ReportingPolicy;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.ERROR, componentModel = "spring")
 public interface ZahlungsInfoMapper {
+    ObjectMapper objectMapper = new ObjectMapper();
+
 
     default ZahlungsInfoDto toDto(ZahlungsInfo zahlungsInfo) {
-        return new ObjectMapper().convertValue(zahlungsInfo, ZahlungsInfoDto.class);
+        return objectMapper.convertValue(zahlungsInfo, ZahlungsInfoDto.class);
     }
 }
