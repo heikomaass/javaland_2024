@@ -1,0 +1,53 @@
+{
+  "results": [
+    {
+      "verbindungsId": "3c93ddaa-226e-4c5f-a03d-1f972f6ae0d3",
+      "verkehrsmittel": [
+        {
+          "produkt": "ICE 727",
+          "halte": [
+            {
+              "bahnhofsnummer": "8000105",
+              "abfahrt": "2024-05-12T18:53:00",
+              "anzeigeName": "Frankfurt(Main) Hbf"
+            },
+            {
+              "bahnhofsnummer": "8000010",
+              "ankunft": "2024-05-12T19:22:00",
+              "abfahrt": "2024-05-12T19:23:00",
+              "anzeigeName": "Aschaffenburg Hbf"
+            },
+            {
+              "bahnhofsnummer": "8000260",
+              "ankunft": "2024-05-12T20:01:00",
+              "abfahrt": "2024-05-12T20:04:00",
+              "anzeigeName": "Würzburg Hbf"
+            }
+          ]
+        },
+        {
+          "produkt": "ICE 729",
+          "halte": [
+            {
+              "bahnhofsnummer": "8000105",
+              "abfahrt": "2024-05-12T19:53:00",
+              "anzeigeName": "Frankfurt(Main) Hbf"
+            },
+            {
+              "bahnhofsnummer": "8000010",
+              "ankunft": "2024-05-12T20:22:00",
+              "abfahrt": "2024-05-12T20:23:00",
+              "anzeigeName": "Aschaffenburg Hbf"
+            },
+            {
+              "bahnhofsnummer": "8000260",
+              "ankunft": "2024-05-12T21:01:00",
+              "abfahrt": "2024-05-12T20:04:00",
+              "anzeigeName": "Würzburg Hbf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

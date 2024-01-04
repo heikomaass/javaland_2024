@@ -2,6 +2,7 @@ ssl_session_cache   shared:SSL:10m;
 ssl_session_timeout 10m;
 
 server {
+
     listen              8443 ssl;
     keepalive_timeout   70;
     server_name         www.example.com;
@@ -14,6 +15,12 @@ server {
         root   /usr/share/nginx/html;
         index  index.html index.htm;
     }
+
+    location /api {
+        root  /usr/share/nginx/json;
+        add_header  Content-Type application/json;
+    }
+
     error_page   500 502 503 504  /50x.html;
     location = /50x.html {
         root   /usr/share/nginx/html;
