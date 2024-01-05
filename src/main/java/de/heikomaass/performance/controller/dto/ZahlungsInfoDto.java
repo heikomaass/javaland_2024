@@ -1,4 +1,4 @@
-package de.heikomaass.performance.objectmapper.controller.dto;
+package de.heikomaass.performance.controller.dto;
 
 import lombok.Builder;
 import lombok.Value;

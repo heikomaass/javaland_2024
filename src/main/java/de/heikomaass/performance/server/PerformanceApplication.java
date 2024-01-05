@@ -1,6 +1,6 @@
-package de.heikomaass.performance.objectmapper.server;
+package de.heikomaass.performance.server;
 
-import de.heikomaass.performance.objectmapper.controller.ControllerConfiguration;
+import de.heikomaass.performance.controller.ControllerConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

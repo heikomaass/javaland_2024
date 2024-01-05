@@ -1,5 +1,6 @@
-package de.heikomaass.performance.objectmapper.server;
+package de.heikomaass.performance.server;
 
+import de.heikomaass.performance.server.PerformanceApplication;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 

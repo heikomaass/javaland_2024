@@ -1,4 +1,4 @@
-package de.heikomaass.performance.objectmapper.core;
+package de.heikomaass.performance.core.model;
 
 import lombok.Builder;
 import lombok.Value;

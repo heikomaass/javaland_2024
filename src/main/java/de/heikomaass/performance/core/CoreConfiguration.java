@@ -1,5 +1,6 @@
-package de.heikomaass.performance.objectmapper.core;
+package de.heikomaass.performance.core;
 
+import de.heikomaass.performance.core.service.AngebotService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

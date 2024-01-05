@@ -1,4 +1,7 @@
-package de.heikomaass.performance.objectmapper.core;
+package de.heikomaass.performance.core.service;
+
+import de.heikomaass.performance.core.model.Angebot;
+import de.heikomaass.performance.core.model.ZahlungsInfo;
 
 import java.util.List;
 import java.util.UUID;
