@@ -9,7 +9,7 @@ import org.springframework.web.client.RestClient;
 public class AdapterConfiguration {
 
     @Bean(name = "verbindungRestClient")
-    RestClient verbindungRestClient(@Value("verbindung.baseurl") String verbindungBaseUrl) {
+    RestClient verbindungRestClient(@Value("${verbindung.baseurl}") String verbindungBaseUrl) {
         return RestClient.builder()
                 .baseUrl(verbindungBaseUrl)
                 .build();

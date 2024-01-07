@@ -18,6 +18,7 @@ server {
 
     location /api {
         root  /usr/share/nginx/json;
+        rewrite ^/api/(.*)$ /api/$1.json break;
         add_header  Content-Type application/json;
     }
 

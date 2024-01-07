@@ -13,9 +13,9 @@ public class VerbindungAdapter {
 
     private final RestClient restClient;
 
-    List<Verbindung> getVerbindungen() {
+    public List<Verbindung> getVerbindungen() {
         VerbindungResponse verbindungResponse = restClient.get()
-                .uri(URI.create("/api/verbindungen"))
+                .uri(uriBuilder -> uriBuilder.path("/api/verbindungen").build())
                 .retrieve().
                 body(VerbindungResponse.class);
         if (verbindungResponse != null) {
