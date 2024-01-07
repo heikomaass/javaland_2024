@@ -20,4 +20,4 @@ services:
     volumes:
      - ./nginx/templates:/etc/nginx/templates
      - ./nginx/json:/usr/share/nginx/json
-     - ./certs:/etc/nginx/certs
+     - ../certs:/etc/nginx/certs

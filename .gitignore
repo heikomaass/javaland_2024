@@ -34,5 +34,6 @@ build/
 
 
 ### Certificates ###
-*.crt
+*.pem
 *.key
+*.crt
