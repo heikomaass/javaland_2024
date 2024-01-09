@@ -1,0 +1,21 @@
+version: '3'
+
+include:
+  - includes/objectmapper_benchmark.yml
+
+services:
+  performance-objectmapper:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    environment:
+      JAVA_OPTIONS: -Xmx512M
+      OBJECTMAPPERFACTORY: reusing
+    ports:
+      - '8080:8080'
+    healthcheck:
+      test:  "wget --no-verbose --tries=1 --spider http://localhost:8080/actuator/health || exit 1"
+      retries: 10
+      timeout: 2s
+      interval: 5s
+      start_interval: 2s
