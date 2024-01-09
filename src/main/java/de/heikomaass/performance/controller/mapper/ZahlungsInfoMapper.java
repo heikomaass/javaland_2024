@@ -6,13 +6,15 @@ import de.heikomaass.performance.controller.dto.ZahlungsInfoDto;
 import de.heikomaass.performance.core.model.ZahlungsInfo;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @Mapper(unmappedTargetPolicy = ReportingPolicy.ERROR, componentModel = "spring")
-public interface ZahlungsInfoMapper {
-    ObjectMapper objectMapper = new ObjectMapper();
+public abstract class ZahlungsInfoMapper {
 
+    @Autowired
+    ObjectMapperFactory objectMapperFactory;
 
-    default ZahlungsInfoDto toDto(ZahlungsInfo zahlungsInfo) {
-        return objectMapper.convertValue(zahlungsInfo, ZahlungsInfoDto.class);
+    public ZahlungsInfoDto toDto(ZahlungsInfo zahlungsInfo) {
+        return objectMapperFactory.getObjectMapper().convertValue(zahlungsInfo, ZahlungsInfoDto.class);
     }
 }
