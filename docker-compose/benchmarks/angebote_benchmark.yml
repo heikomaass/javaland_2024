@@ -4,13 +4,13 @@ services:
   apache-bench-warmup:
     image: jordi/ab
     depends_on:
-      performance-objectmapper:
+      performance-app:
         condition: service_healthy
     command:
       - -k
       - '-c 2'
-      - '-n 10'
-      - 'http://performance-objectmapper:8080/angebote'
+      - '-n 50'
+      - 'http://performance-app:8080/angebote'
   apache-bench-full:
     image: jordi/ab
     depends_on:
@@ -20,4 +20,4 @@ services:
       - -k
       - '-c 4'
       - '-n 100'
-      - 'http://performance-objectmapper:8080/angebote'
+      - 'http://performance-app:8080/angebote'

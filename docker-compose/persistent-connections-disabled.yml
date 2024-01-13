@@ -1,7 +1,7 @@
 version: '3'
 
 include:
-  - benchmarks/angebote_benchmark.yml
+  - benchmarks/verbindungen_benchmark.yml
 
 services:
   performance-app:
@@ -10,7 +10,7 @@ services:
       dockerfile: Dockerfile
     environment:
       JAVA_OPTIONS: -Xmx512M
-      OBJECTMAPPERFACTORY: reusing
+      PERSISTENT_CONNECTIONS: false
     ports:
       - '8080:8080'
     healthcheck:
@@ -19,3 +19,11 @@ services:
       timeout: 2s
       interval: 5s
       start_interval: 2s
+  verbindung-service:
+    image: nginx
+    ports:
+      - '8443:8443'
+    volumes:
+     - ./nginx/templates:/etc/nginx/templates
+     - ./nginx/json:/usr/share/nginx/json
+     - ../certs:/etc/nginx/certs

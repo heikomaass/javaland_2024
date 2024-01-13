@@ -1,10 +1,10 @@
 version: '3'
 
 include:
-  - includes/objectmapper_benchmark.yml
+  - benchmarks/angebote_benchmark.yml
 
 services:
-  performance-objectmapper:
+  performance-app:
     build: ../
     environment:
       JAVA_OPTIONS: -Xmx512M

@@ -1,12 +1,16 @@
 version: '3'
 
+include:
+  - benchmarks/verbindungen_benchmark.yml
+
 services:
-  performance-persistent-connections:
+  performance-app:
     build:
       context: ../
       dockerfile: Dockerfile
     environment:
       JAVA_OPTIONS: -Xmx512M
+      PERSISTENT_CONNECTIONS: true
     ports:
       - '8080:8080'
     healthcheck:

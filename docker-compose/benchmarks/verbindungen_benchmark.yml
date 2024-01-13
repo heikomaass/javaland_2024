@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+  apache-bench-warmup:
+    image: jordi/ab
+    depends_on:
+      performance-app:
+        condition: service_healthy
+    command:
+      - -k
+      - '-c 3'
+      - '-n 100'
+      - 'http://performance-app:8080/verbindungen'
+  apache-bench-full:
+    image: jordi/ab
+    depends_on:
+      apache-bench-warmup:
+        condition: service_completed_successfully
+    command:
+      - -k
+      - '-c 3'
+      - '-n 1000'
+      - 'http://performance-app:8080/verbindungen'
