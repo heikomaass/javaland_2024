@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  apache-bench-warmup:
+  verbindungen-bench-warmup:
     image: jordi/ab
     depends_on:
       performance-app:
@@ -11,10 +11,10 @@ services:
       - '-c 3'
       - '-n 100'
       - 'http://performance-app:8080/verbindungen'
-  apache-bench-full:
+  verbindungen-bench-full:
     image: jordi/ab
     depends_on:
-      apache-bench-warmup:
+      verbindungen-bench-warmup:
         condition: service_completed_successfully
     command:
       - -k

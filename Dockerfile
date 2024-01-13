@@ -4,6 +4,8 @@ COPY ./java-cmd-run.sh /
 COPY ./certs/nginx-selfsigned.crt /certs/nginx-selfsigned.crt
 COPY ./target/performance-objectmapper-app.jar /jar/performance-objectmapper-app.jar
 
+RUN apk update && apk add --update tcpdump
+
 RUN keytool -importcert -file /certs/nginx-selfsigned.crt -alias verbindung-service -cacerts -storepass changeit -noprompt && \
     chmod +x java-cmd-run.sh
 

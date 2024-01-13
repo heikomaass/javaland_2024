@@ -48,7 +48,10 @@ public class AdapterConfiguration {
 
     @Bean
     public PoolingHttpClientConnectionManager poolingHttpClientConnectionManager() {
-        return new PoolingHttpClientConnectionManager();
+        PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
+        connectionManager.setMaxTotal(50);
+        connectionManager.setDefaultMaxPerRoute(50);
+        return connectionManager;
     }
 
     @Bean
