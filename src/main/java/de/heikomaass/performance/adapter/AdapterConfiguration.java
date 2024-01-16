@@ -47,17 +47,13 @@ public class AdapterConfiguration {
     }
 
     @Bean
-    public PoolingHttpClientConnectionManager poolingHttpClientConnectionManager() {
+    public CloseableHttpClient httpClient() {
         PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager();
-        connectionManager.setMaxTotal(50);
-        connectionManager.setDefaultMaxPerRoute(50);
-        return connectionManager;
-    }
+        connectionManager.setMaxTotal(50); // default is 25
+        connectionManager.setDefaultMaxPerRoute(50); // default is 5
 
-    @Bean
-    public CloseableHttpClient httpClient(PoolingHttpClientConnectionManager poolingHttpClientConnectionManager) {
         return HttpClients.custom()
-                .setConnectionManager(poolingHttpClientConnectionManager)
+                .setConnectionManager(connectionManager)
                 .setKeepAliveStrategy((response, context) -> TimeValue.ofSeconds(50))
                 .build();
     }
